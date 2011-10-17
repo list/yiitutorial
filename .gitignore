@@ -4,3 +4,4 @@ protected/runtime/*
 protected/data/*.db
 protected/tests/report/*
 nbproject/
+protected/config/prod.php
