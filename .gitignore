@@ -1,0 +1,6 @@
+assets/*
+framework/
+protected/runtime/*
+protected/data/*.db
+protected/tests/report/*
+nbproject/
