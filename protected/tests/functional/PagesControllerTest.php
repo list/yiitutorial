@@ -31,8 +31,9 @@ class PagesControllerTest extends PHPUnit_Framework_TestCase {
       'LoginForm[username]' => '',
       'LoginForm[password]' => ''
     ));
-    $this->assertRegExp('/Username cannot be blank./', $client->request('POST')->getBody());
-    $this->assertRegExp('/Password cannot be blank./', $client->request('POST')->getBody());
+    $client->request('POST');
+    $this->assertRegExp('/Username cannot be blank./', $client->getLastResponse()->getBody());
+    $this->assertRegExp('/Password cannot be blank./', $client->getLastResponse()->getBody());
 
     $client->resetParameters();
     $client->setParameterPost(array(
@@ -46,8 +47,9 @@ class PagesControllerTest extends PHPUnit_Framework_TestCase {
       'LoginForm[username]' => 'demo',
       'LoginForm[password]' => 'demo'
     ));
-    $this->assertNotRegExp('/Username cannot be blank./', $client->request('POST')->getBody());
-    $this->assertNotRegExp('/Password cannot be blank./', $client->request('POST')->getBody());
+    $client->request('POST');
+    $this->assertNotRegExp('/Username cannot be blank./', $client->getLastResponse()->getBody());
+    $this->assertNotRegExp('/Password cannot be blank./', $client->getLastResponse()->getBody());
 
     $client->setUri(TEST_BASE_URL);
     $this->assertTrue($client->request()->isSuccessful());
