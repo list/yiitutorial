@@ -1,5 +1,5 @@
 <header>
-  <?php echo CHtml::link(CHtml::image(Yii::app()->request->baseUrl.'/images/logo.png', "Sample app", array('class' => "round")), array('pages/home')); ?>
+  <?php echo CHtml::link(Helper::logo(), array('pages/home')); ?>
   <nav class="round">
     <?php
     $this->widget('zii.widgets.CMenu', array(

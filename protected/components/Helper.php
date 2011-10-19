@@ -12,4 +12,7 @@ class Helper {
     }
   }
 
+  public static function logo() {
+    return CHtml::image(Yii::app()->request->baseUrl.'/images/logo.png', "Sample app", array('class' => "round"));
+  }
 }
