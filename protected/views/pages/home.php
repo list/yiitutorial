@@ -1,4 +1,4 @@
-<?php $this->pageTitle = Yii::app()->name.' | Home'; ?>
+<?php $this->pageTitle = 'Home'; ?>
 <h1>Sample App</h1>
 <p>
   This is the home page for the <a href="http://putera.comule.com/yiitutorial/">Yii Tutorial</a>,

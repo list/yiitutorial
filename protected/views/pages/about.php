@@ -1,4 +1,4 @@
-<?php $this->pageTitle = Yii::app()->name.' | About'; ?>
+<?php $this->pageTitle = 'About'; ?>
 <h1>About Rails Tutorial</h1>
 <p>
   <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
