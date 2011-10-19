@@ -6,4 +6,4 @@
   sample application.
 </p>
 
-<?php echo CHtml::link('Sign up now!', Yii::app()->baseUrl . '/signup', array('class' => 'signup_button round')); ?>
+<?php echo CHtml::link('Sign up now!', array('users/new'), array('class' => 'signup_button round')); ?>
