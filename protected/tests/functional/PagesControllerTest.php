@@ -15,9 +15,9 @@ class PagesControllerTest extends PHPUnit_Framework_TestCase {
     $this->assertTrue($client->request()->isSuccessful());
   }
 
-  public function testError() {
-    $client = new EHttpClient(TEST_BASE_URL.'/pages/error-not-found');
-    $this->assertTrue($client->request()->isError());
+  public function testAbout() {
+    $client = new EHttpClient(TEST_BASE_URL.'/pages/about');
+    $this->assertTrue($client->request()->isSuccessful());
   }
 
   public function testLoginLogout() {
