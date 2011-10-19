@@ -1,4 +1,5 @@
 <?php
+$this->pageTitle = Yii::app()->name.' | Home';
 $this->breadcrumbs = array(
   'Pages' => array('/pages'),
   'Home',
