@@ -11,16 +11,19 @@ class LayoutLinksTest extends PHPUnit_Framework_TestCase {
     $this->assertTag(array('tag' => 'title', 'content' => 'Home'), $client->request()->getBody());
   }
 
+  /** @test */
   public function shouldHaveContactPage() {
     $client = new EHttpClient(TEST_BASE_URL.'/contact');
     $this->assertTag(array('tag' => 'title', 'content' => 'Contact'), $client->request()->getBody());
   }
 
+  /** @test */
   public function shouldHaveAboutPage() {
     $client = new EHttpClient(TEST_BASE_URL.'/about');
     $this->assertTag(array('tag' => 'title', 'content' => 'About'), $client->request()->getBody());
   }
 
+  /** @test */
   public function shouldHaveHelpPage() {
     $client = new EHttpClient(TEST_BASE_URL.'/help');
     $this->assertTag(array('tag' => 'title', 'content' => 'Help'), $client->request()->getBody());

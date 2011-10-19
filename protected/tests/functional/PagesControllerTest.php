@@ -40,7 +40,7 @@ class PagesControllerTest extends PHPUnit_Framework_TestCase {
   /** @test */
   public function getAboutShouldHaveRightTitle() {
     $client = new EHttpClient(TEST_BASE_URL.'/pages/about');
-        $this->assertTag(array('tag' => 'title', 'content' => Yii::app()->name.' | About'),
+    $this->assertTag(array('tag' => 'title', 'content' => Yii::app()->name.' | About'),
       $client->request()->getBody());
 
   }
@@ -54,7 +54,7 @@ class PagesControllerTest extends PHPUnit_Framework_TestCase {
   /** @test */
   public function getHelpShouldHaveRightTitle() {
     $client = new EHttpClient(TEST_BASE_URL.'/pages/help');
-        $this->assertTag(array('tag' => 'title', 'content' => Yii::app()->name.' | Help'),
+    $this->assertTag(array('tag' => 'title', 'content' => Yii::app()->name.' | Help'),
       $client->request()->getBody());
 
   }
