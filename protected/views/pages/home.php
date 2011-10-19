@@ -5,3 +5,5 @@
   a <a href="http://www.yiiframework.com">Yii</a> port of <a href="http://ruby.railstutorial.org/">Ruby on Rails Tutorial</a>
   sample application.
 </p>
+
+<?php echo CHtml::link('Sign up now!', Yii::app()->baseUrl . '/signup', array('class' => 'signup_button round')); ?>
