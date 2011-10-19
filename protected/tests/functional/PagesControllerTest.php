@@ -5,21 +5,25 @@ Yii::import('ext.httpclient.adapter.*');
 
 class PagesControllerTest extends PHPUnit_Framework_TestCase {
 
-  public function testHome() {
+  /** @test */
+  public function getHomeShouldBeSuccesfull() {
     $client = new EHttpClient(TEST_BASE_URL.'/pages/home');
     $this->assertTrue($client->request()->isSuccessful());
   }
 
-  public function testContact() {
+  /** @test */
+  public function getContactShouldBeSuccesfull() {
     $client = new EHttpClient(TEST_BASE_URL.'/pages/contact');
     $this->assertTrue($client->request()->isSuccessful());
   }
 
-  public function testAbout() {
+  /** @test */
+  public function getAboutShouldBeSuccesfull() {
     $client = new EHttpClient(TEST_BASE_URL.'/pages/about');
     $this->assertTrue($client->request()->isSuccessful());
   }
 
+  /** @test */
   public function testLoginLogout() {
     $client = new EHttpClient(TEST_BASE_URL.'/site/login');
     $client->setCookieJar();
