@@ -46,6 +46,20 @@ class PagesControllerTest extends PHPUnit_Framework_TestCase {
   }
 
   /** @test */
+  public function getHelpShouldBeSuccesfull() {
+    $client = new EHttpClient(TEST_BASE_URL.'/pages/help');
+    $this->assertTrue($client->request()->isSuccessful());
+  }
+
+  /** @test */
+  public function getHelpShouldHaveRightTitle() {
+    $client = new EHttpClient(TEST_BASE_URL.'/pages/help');
+        $this->assertTag(array('tag' => 'title', 'content' => Yii::app()->name.' | Help'),
+      $client->request()->getBody());
+
+  }
+
+  /** @test */
   public function testLoginLogout() {
     $client = new EHttpClient(TEST_BASE_URL.'/site/login');
     $client->setCookieJar();

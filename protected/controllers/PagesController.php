@@ -14,4 +14,8 @@ class PagesController extends Controller {
     $this->render('about');
   }
 
+  public function actionHelp() {
+    $this->render('help');
+  }
+
 }
