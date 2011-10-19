@@ -3,7 +3,17 @@
 Yii::import('ext.httpclient.*');
 Yii::import('ext.httpclient.adapter.*');
 
-class LayoutLinksTest extends PHPUnit_Framework_TestCase {
+class LayoutLinksTest extends IntegrationTestCase {
+
+  /** @test */
+  public function shouldCreateCorrectRoutes() {
+    $this->assertEquals('/', $this->createUrl('pages/home'));
+    $this->assertEquals('/about', $this->createUrl('pages/about'));
+    $this->assertEquals('/contact', $this->createUrl('pages/contact'));
+    $this->assertEquals('/help', $this->createUrl('pages/help'));
+    $this->assertEquals('/signup', $this->createUrl('users/new'));
+    $this->assertEquals('/signin', $this->createUrl('users/login'));
+  }
 
   /** @test */
   public function shouldHaveHomePage() {

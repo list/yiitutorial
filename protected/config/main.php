@@ -9,6 +9,8 @@ return array(
   'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
   'name'=>'Yii Tutorial',
 
+  'defaultController'=>'pages',
+
   // preloading 'log' component
   'preload'=>array('log'),
 
@@ -45,8 +47,8 @@ return array(
         '/about' => 'pages/about',
         '/contact' => 'pages/contact',
         '/help' => 'pages/help',
-        '/signup' => 'user/new',
-        '/signin' => 'user/login',
+        '/signup' => 'users/new',
+        '/signin' => 'users/login',
         '<controller:\w+>/<id:\d+>'=>'<controller>/view',
         '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
         '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',

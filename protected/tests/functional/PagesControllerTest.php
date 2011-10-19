@@ -3,7 +3,7 @@
 Yii::import('ext.httpclient.*');
 Yii::import('ext.httpclient.adapter.*');
 
-class PagesControllerTest extends PHPUnit_Framework_TestCase {
+class PagesControllerTest extends IntegrationTestCase {
 
   /** @test */
   public function getHomeShouldBeSuccesfull() {
