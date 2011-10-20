@@ -10,7 +10,7 @@ define('TEST_BASE_URL', 'http://localhost/yiitutorial/index-test.php/');
 $yiit = dirname(__FILE__).'/../../framework/yiit.php';
 $config = dirname(__FILE__).'/../config/test.php';
 
-require_once($yiit);
-//require_once(dirname(__FILE__).'/WebTestCase.php');
+require_once $yiit;
+require_once dirname(dirname(__FILE__)).'/extensions/goutte.phar';
 
 Yii::createWebApplication($config);

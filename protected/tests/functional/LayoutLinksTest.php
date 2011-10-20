@@ -4,6 +4,8 @@ Yii::import('ext.libwebtestcase.LibWebTestCase');
 Yii::import('ext.httpclient.*');
 Yii::import('ext.httpclient.adapter.*');
 
+use Goutte\Client;
+
 class LayoutLinksTest extends LibWebTestCase {
 
   /** @test */
@@ -38,6 +40,25 @@ class LayoutLinksTest extends LibWebTestCase {
   public function shouldHaveHelpPage() {
     $client = new EHttpClient(TEST_BASE_URL.'/help');
     $this->assertTag(array('tag' => 'title', 'content' => 'Help'), $client->request()->getBody());
+  }
+
+  /** @test */
+  public function shouldHaveTheRightLinksOnTheLayout() {
+    $client = new Client();
+    $crawler = $client->request('GET', TEST_BASE_URL);
+    $this->assertStringEndsWith('Home', $crawler->filter('title')->text());
+
+    $crawler = $client->click($crawler->selectLink('About')->link());
+    $this->assertStringEndsWith('About', $crawler->filter('title')->text());
+
+    $crawler = $client->click($crawler->selectLink('Contact')->link());
+    $this->assertStringEndsWith('Contact', $crawler->filter('title')->text());
+
+    $crawler = $client->click($crawler->selectLink('Home')->link());
+    $this->assertStringEndsWith('Home', $crawler->filter('title')->text());
+
+    $crawler = $client->click($crawler->selectLink('Sign up now!')->link());
+    $this->assertStringEndsWith('Sign up', $crawler->filter('title')->text());
   }
 
 }
