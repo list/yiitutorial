@@ -1,9 +1,10 @@
 <?php
 
+Yii::import('ext.libwebtestcase.LibWebTestCase');
 Yii::import('ext.httpclient.*');
 Yii::import('ext.httpclient.adapter.*');
 
-class LayoutLinksTest extends IntegrationTestCase {
+class LayoutLinksTest extends LibWebTestCase {
 
   /** @test */
   public function shouldCreateCorrectRoutes() {

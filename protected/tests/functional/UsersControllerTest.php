@@ -1,9 +1,10 @@
 <?php
 
+Yii::import('ext.libwebtestcase.LibWebTestCase');
 Yii::import('ext.httpclient.*');
 Yii::import('ext.httpclient.adapter.*');
 
-class UsersControllerTest extends IntegrationTestCase {
+class UsersControllerTest extends LibWebTestCase {
 
   /** @test */
   public function getSignupShouldBeSuccesfull() {
